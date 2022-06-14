@@ -1,30 +1,25 @@
 import mongoose from "mongoose"
 
-const itemSchema = mongoose.Schema({
-  name: {
+const problemSchema = mongoose.Schema({
+  startingPosition: {
     type: String,
     required: true,
   },
-  type: {
-    type: String,
+  movesData: {
+    type: [String],
+    required: true,
   },
-  typeAdditions: {
-    type: String,
+  elo: {
+    type: Number,
   },
-  rarity: {
-    type: String,
+  rating: {
+    type: Number,
   },
-  text: {
-    type: String,
-  },
-  source: {
-    type: String,
-  },
-  attunement: {
+  goal: {
     type: String,
   },
 })
 
-const Item = mongoose.model("Item", itemSchema)
+const Problem = mongoose.model("Problem", problemSchema)
 
-export default Item
+export default Problem
