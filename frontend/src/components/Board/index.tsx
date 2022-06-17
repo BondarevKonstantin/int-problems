@@ -22,7 +22,7 @@ import {
 
 import IntellectorPosition, { Designation, MoveResult } from 'intellector'
 
-const position = IntellectorPosition('w^o_r`igehnig!HnRrVrYrkror')
+const position = IntellectorPosition('wUrViWr[odrigkrsrtn!GnJrOrZe`oegqi')
 
 const Board: React.FC = () => {
   const [isDragging, setIsDragging] = useState<boolean>(false)

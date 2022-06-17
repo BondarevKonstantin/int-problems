@@ -38,12 +38,19 @@ const StyledHexCell = styled.div<Pick<HexCellInnerProps, 'size' | 'coord'>>(
   }
 )
 
+const StyledDesignation = styled.p`
+  position: absolute;
+  font-weight: 600;
+  top: 30%;
+  left: 10%;
+`
+
 const HexCellInner: React.FC<HexCellInnerProps> = ({ size, coord, piece }) => {
   return (
     <StyledHexCell coord={coord} size={size}>
-      <p style={{ position: 'absolute', top: '20%', left: '10%' }}>
+      <StyledDesignation>
         {coord.column % 2 === 0 ? 7 - coord.row : 6 - coord.row}
-      </p>
+      </StyledDesignation>
     </StyledHexCell>
   )
 }

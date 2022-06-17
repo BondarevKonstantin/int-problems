@@ -85,7 +85,7 @@ const StyledMark = styled.div`
 
 const HexCell: React.FC<HexCellProps> = (props) => {
   const { definedPiece: piece } = props
-  const pieceOffset = getPieceOffset(piece?.type)
+  const pieceOffset = getPieceOffset(HEX_SIZE, piece?.type)
   return (
     <>
       <StyledHexCell
