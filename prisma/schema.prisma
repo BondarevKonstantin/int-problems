@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Enums
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// Models
+
+model User {
+  id        String    @id @default(uuid())
+  username  String    @unique
+  password  String
+  rep       Int       @default(1000)
+  role      Role      @default(USER)
+  createdAt DateTime  @default(now())
+  problems  Problem[]
+}
+
+model Problem {
+  id               String   @id @default(uuid())
+  startingPosition String
+  movesData        String[]
+  rep              Int @default(1000)
+  rating           Int
+  goal             String
+  creator          User     @relation(fields: [creatorId], references: [id])
+  creatorId        String
+}
