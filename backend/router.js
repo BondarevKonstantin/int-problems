@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getProblems, createProblem } from './handlers/problems';
+import { getProblems, createProblem } from './handlers/problems.js';
 
 const router = Router();
 
