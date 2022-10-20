@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "MERN intellector problems & courses app",
   "main": "server.js",
+  "type": "module",
   "author": "Konstantin <Bondkr@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon backend/index.ts",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },

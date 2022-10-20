@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { Routes, Route } from 'react-router-dom'
 
 import AppHeader from 'components/AppHeader'
@@ -6,6 +7,7 @@ import ProblemPage from 'pages/ProblemPage'
 import AuthorizationPage from 'pages/AuthorizationPage'
 
 const App = () => {
+  console.log(axios.get('/api/problems'))
   return (
     <div className="App__container">
       <AppHeader />
